@@ -5,3 +5,4 @@ from django.db import models
 class Dados_Imc (models.Model):
     peso = models.SmallIntegerField(blank=True, null=True)
     altura = models.SmallIntegerField(blank=True, null=True)
+    

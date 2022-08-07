@@ -13,18 +13,24 @@
     <div class="h1">
         <h1>Digite seus dados para saber seu IMC (Indice de Massa Corporal)</h1>
     </div>
+   
     <div class="container">
-        <form method="POST" action="" class="form-box">
-            {% csrf_token %}
-            
-            <input id="weight" type="number" step="0.001" step="min=0" placeholder="Peso (ex: 65.5)">
-            <input id="height"type="number" step="0.01" step="min=0" placeholder="Altura (ex: 1.60)">
-            <input id="button" type="submit" value="Calcular"></input>
-            
-        </form>
+        <div class="table">
+            <img src="{% static 'calculo/img/tabela_imc.jpg' %}"/>
+        </div>
         <div>
-            {{ calculo }}
+            <form method="post" action="." class="form-box">
+                {% csrf_token %}
+                
+                {{ form }}
+                <input id="button"type="submit" value="IMC"/>
+                <p>SEU IMC: </p>
+                {% if form %} 
+                {{ imc }}
+                {% endif %}
+            </form>
         </div>
     </div>
+   
 </body>
 </html>

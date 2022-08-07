@@ -4,6 +4,7 @@ body{
  input{
     height: 60px;
     width: 300px;
+    
  }
 
 .container{
@@ -14,7 +15,6 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
     
 }
 
@@ -29,26 +29,23 @@ body{
 }
 
 .form-box{
-    width: 300px;
-    height: 300px;
+    width: 305px;
+    height: 340px;
     background: #fff;
     border: solid 3px;
     border-color: black;
+    box-shadow: 19px -10px teal;
+    border-style: ridge;
+    text-align: center;
 }
 
-#weight{
-    width: 293px;
-    font-size: 15px;
-}
-
-#height{
-    width: 293px;
-    font-size: 15px;
+.table{
+    display: inline;
+    border: solid black;
+    background:  teal;
+    
 }
 
 #button{
-  background: #6ade87;
-  border: solid 3px #95f0ab;
-  cursor: pointer;
+    width: 150px;
 }
-
