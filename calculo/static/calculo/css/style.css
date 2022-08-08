@@ -1,5 +1,7 @@
 body{
     margin: 0px;
+    width: 100vw;
+    height: 100vh;
 }
  input{
     height: 60px;

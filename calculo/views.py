@@ -5,6 +5,7 @@ from calculo.models import Dados_Imc
 
 
 def imc_view(request):
+    #Faz a primeira renderização ao acessar a página
     if request.method == "GET":
         form = UserForm()
         context = {
@@ -12,19 +13,17 @@ def imc_view(request):
         }
         return render(request,'calculo/imc.html', context=context)
     else:
-        form = UserForm(request.POST)   #Se for feito um POST no UserForm
-        if form.is_valid():             #verifica que se o POST é válido
+        form = UserForm(request.POST)   
+        if form.is_valid():             
             imcpeso = request.POST.get('peso')
             imcalt = request.POST.get('altura')
             imc = float(imcpeso) / (float(imcalt)* float(imcalt))
             imc_final = round(imc,1)
-            print(imc)
-            form = UserForm()           #cria um formulário em branco (novo)
+        
                 
         context = {
             'form': form,
             'imc' : imc_final
         }
         
-        return render(request,'calculo/imc.html', context=context)
-        
+        return render(request,'calculo/imc.html', context=context)        
